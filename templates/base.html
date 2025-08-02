@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blockchain Voting System</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="navbar">
+    <h2>🗳 Blockchain Voting</h2>
+    <nav>
+      <a href="{{ url_for('index') }}">Home</a>
+
+      {% if session.get('username') %}
+        <a href="{{ url_for('vote') }}">Vote</a>
+        <a href="{{ url_for('results') }}">Results</a>
+        <a href="{{ url_for('logout') }}">Logout ({{ session['username'] }})</a>
+      {% elif session.get('is_admin') %}
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('logout') }}">Logout (Admin)</a>
+      {% else %}
+        <a href="{{ url_for('register') }}">Register</a>
+        <a href="{{ url_for('login') }}">Login</a>
+        <a href="{{ url_for('dashboard') }}">Admin</a>
+      {% endif %}
+      
+    </nav>
+  </div>
+
+  <div class="content">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Blockchain Voting System</p>
+  </footer>
+</body>
+</html>

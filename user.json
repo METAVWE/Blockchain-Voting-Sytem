@@ -1,0 +1,14 @@
+{
+    "admin": {
+        "password": "admin",
+        "role": "admin"
+    },
+    "voter1": {
+        "password": "voter1",
+        "role": "voter"
+    },
+    "Diya": {
+        "password": "admin",
+        "role": "voter"
+    }
+}

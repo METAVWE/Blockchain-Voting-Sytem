@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block content %}
+  <h2>👨‍💼 Admin Dashboard</h2>
+
+  <h3>🗳 Registered Voters</h3>
+  <table border="1" cellpadding="8" cellspacing="0">
+    <thead>
+      <tr><th>ID</th><th>Username</th><th>Has Voted</th></tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ '✅ Yes' if user.has_voted else '❌ No' }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h3>📦 Blockchain Data</h3>
+  <pre>{{ blocks | safe }}</pre>
+
+  <a href="/logout"><button>Logout</button></a>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Vote{% endblock %}
+
+{% block content %}
+  <h2>Cast Your Vote</h2>
+  <form method="POST">
+    {% for candidate in candidates %}
+      <input type="radio" id="{{ candidate }}" name="candidate" value="{{ candidate }}" required>
+      <label for="{{ candidate }}">{{ candidate }}</label><br>
+    {% endfor %}
+    <br>
+    <input type="submit" value="Submit Vote">
+  </form>
+{% endblock %}

@@ -1,0 +1,25 @@
+{
+    "viren": {
+        "password": "0987",
+        "role": "voter",
+        "voted": true
+    },
+    "vishal": {
+        "password": "ktta",
+        "role": "voter"
+    },
+    "pandey": {
+        "password": "bigg",
+        "role": "voter"
+    },
+    "soumya": {
+        "password": "1234",
+        "role": "voter",
+        "voted": true
+    },
+    "ranjan": {
+        "password": "bingo",
+        "role": "voter",
+        "voted": true
+    }
+}
